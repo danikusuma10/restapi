@@ -8,15 +8,34 @@ exports.index = function(req,res){
 };
 
 
-//tampil data di db
+//tampil data di tbl_user
 exports.tampilsemuauser = function(req,res){
     connection.query('SELECT * FROM tbl_user', function(error, rows, fields){
         if(error){
-            connection.log(error);
+            console.log(error);
         }
         else
         {
             response.ok(rows, res)
         }
+    });
+};
+
+
+//tampil data di tbl_user berdasar 
+exports.tampilberdasarid = function(req,res)
+{
+    
+        let id = req.params.id;
+        connection.query('SELECT * FROM tbl_user WHERE id=?',[id],
+         function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }
+            else
+            {
+                response.ok(rows, res)
+            }
+            
     });
 };
