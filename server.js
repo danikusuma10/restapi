@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-// parse application/x-www-form-urlencoded
 
+//panggil routes
+var routes=require('./routes');
+routes(app);
 
 
 app.listen(3000, () => {
