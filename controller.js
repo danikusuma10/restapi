@@ -39,3 +39,25 @@ exports.tampilberdasarid = function(req,res)
             
     });
 };
+
+//tambahkan data tbl_user
+exports.tambahUser = function (req, res)
+{
+
+    var fullname = req.body.fullname;
+    var email = req.body.email;
+    var location =req.body.location;
+    var username =req.body.username;
+    var password =req.body.password;
+
+    connection.query('INSERT INTO tbl_user (fullname,email,location,username,password) VALUES(?,?,?,?,?)',
+[fullname,email,location,username,password],
+        function (error,rows,fields){
+            if(error){
+        console.log(error);
+           }else{
+        response.ok("Berhasil menambah Data",res)
+        }
+    });
+};
+
