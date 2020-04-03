@@ -72,7 +72,21 @@ exports.ubahDataUser = function (req, res) {
             if (error) {
                 console.log(error);
             } else {
-                response.ok("Berhasil Ubah Data User", res)
+                response.ok("Berhasil Hapus ubah User", res)
             }
         });
+}
+
+// DELETE DATA
+exports.hapusMHS = function(req,res){
+    var nim = req.body.nim;
+    connection.query('DELETE FROM tbl_user WHERE nim=?',[nim],
+    function (error, rows, fields) 
+    {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data User", res)
+        }
+    });
 }

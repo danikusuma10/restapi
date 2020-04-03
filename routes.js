@@ -19,6 +19,6 @@ module.exports = function(app){
     app.route('/ubah')
         .put(jsonku.ubahDataUser)
 
-    
+    app.route('/hapus')
+        .delete(jsonku.hapusMHS)
 }
-
