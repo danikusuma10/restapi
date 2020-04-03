@@ -15,4 +15,10 @@ module.exports = function(app){
 
     app.route('/tambah')
         .post(jsonku.tambahUser)
+
+    app.route('/ubah')
+        .put(jsonku.ubahDataUser)
+
+    
 }
+
