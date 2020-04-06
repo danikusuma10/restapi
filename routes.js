@@ -21,4 +21,7 @@ module.exports = function(app){
 
     app.route('/hapus')
         .delete(jsonku.hapusMHS)
+    
+        app.route('/tampilmatakuliah')
+        .get(jsonku.tampilgroupmatakuliah)
 }
